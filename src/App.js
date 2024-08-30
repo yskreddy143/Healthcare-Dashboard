@@ -1,25 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import Header from './components/Header';
+import PatientList from './components/PatientList';
+import PatientDetails from './components/PatientDetails';
+import DiagnosisHistory from './components/DiagnosisHistory';
+import VitalSigns from './components/VitalSigns';
+import LabResults from './components/LabResults';
+import DiagnosticList from './components/DiagnosticList';
 
-function App() {
+const App = () => {
+  const [selectedPatient, setSelectedPatient] = useState(null);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      {/* <div className="content">
+        <PatientList selectPatient={setSelectedPatient} />
+        {selectedPatient && (
+          <div className="patient-details">
+            <PatientDetails patient={selectedPatient} />
+            <DiagnosisHistory data={selectedPatient.diagnosisHistory} />
+            <DiagnosticList diagnostics={selectedPatient.diagnostics} />
+          </div>
+        )}
+      </div> */}
+      <div className="main-container">
+     {!selectedPatient && <PatientList onSelectPatient={setSelectedPatient} />}
+     {selectedPatient && <div className="content">
+        <PatientDetails patient={selectedPatient} />
+        <DiagnosisHistory history={selectedPatient.diagnosis_history} />
+        <VitalSigns vitals={selectedPatient.vitals} />
+        <DiagnosticList diagnostics={selectedPatient.diagnostic_list} />
+        <LabResults labResults={selectedPatient.lab_results} />
+      </div>}
+    </div>
     </div>
   );
-}
+};
 
 export default App;

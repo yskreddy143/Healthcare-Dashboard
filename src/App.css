@@ -1,38 +1,80 @@
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
+  font-family: Arial, sans-serif;
+}
+
+header nav ul {
+  list-style: none;
+  display: flex;
+}
+
+header nav ul li {
+  margin-right: 20px;
+}
+
+.content {
+  display: flex;
+}
+
+.patient-details {
+  flex: 1;
+  padding: 20px;
+}
+
+.patient-list {
+  /* Styles for the patient list component */
+}
+
+.patient-item {
+  display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  cursor: pointer;
+  padding: 10px;
 }
 
-.App-link {
-  color: #61dafb;
+.patient-img {
+  border-radius: 50%;
+  margin-right: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.patient-info p {
+  margin: 0;
+}
+
+.patient-details {
+  /* Styles for patient details */
+}
+
+.patient-profile-img {
+  border-radius: 50%;
+}
+
+.show-all-info {
+  /* Styles for the button */
+}
+
+.diagnosis-history {
+  /* Styles for the diagnosis history */
+}
+
+.vital-signs {
+  display: flex;
+  justify-content: space-between;
+}
+
+.vital-sign {
+  /* Styles for individual vital signs */
+}
+
+.diagnostic-list {
+  /* Styles for the diagnostic list */
+}
+
+.lab-results {
+  /* Styles for lab results */
+}
+
+.download-btn {
+  /* Styles for the download button */
 }
